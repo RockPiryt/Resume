@@ -12,19 +12,10 @@ api_key_gmail = os.getenv("APP_PASSWORD_GMAIL")
 
 
 app = Flask(__name__)
-app.secret_key = "myPass1234!!"
 app.config["SECRET_KEY"]= "myPass1234!!"
 
-@app.route('/')
+@app.route('/', methods=["GET", "POST"])
 def home():
-    return render_template("index.html")
-
-@app.route('/info')
-def info_project():
-    return render_template("info_project.html")
-
-@app.route('/contact', methods=["GET", "POST"])
-def user_contact():
     form_python = ContactForm()
 
     if form_python.validate_on_submit():
@@ -43,7 +34,33 @@ def user_contact():
         send_email(user_name, user_email, user_subject, user_message)
         
         return render_template("get_info.html", html_user_info=user_info)
-    return render_template("contact_page.html", html_form=form_python)
+    return render_template("index.html", html_form=form_python)
+
+@app.route('/info')
+def info_project():
+    return render_template("info_project.html")
+
+# @app.route('/contact', methods=["GET", "POST"])
+# def user_contact():
+#     form_python = ContactForm()
+
+#     if form_python.validate_on_submit():
+#         user_name = form_python.name.data
+#         user_email = form_python.email.data
+#         user_subject = form_python.subject.data
+#         user_message = form_python.message.data
+
+#         user_info = {
+#             "name": user_name,
+#             "email": user_email,
+#             "subject": user_subject,
+#             "message": user_message,
+#         }
+
+#         send_email(user_name, user_email, user_subject, user_message)
+        
+#         return render_template("get_info.html", html_user_info=user_info)
+#     return render_template("contact_page.html", html_form=form_python)
 
 def send_email(name, email, subject, message):
     #Create email

@@ -1,5 +1,10 @@
 venv/
 readme_examples/
+php-email-form/
+bg3.jpeg
+bg2.jpeg
+portoflio/
+
 
 # Created by https://www.toptal.com/developers/gitignore/api/flask
 # Edit at https://www.toptal.com/developers/gitignore?templates=flask
