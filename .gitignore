@@ -4,6 +4,9 @@ php-email-form/
 bg3.jpeg
 bg2.jpeg
 portoflio/
+main.py
+.idea/
+.ebextensions/
 
 
 # Created by https://www.toptal.com/developers/gitignore/api/flask
