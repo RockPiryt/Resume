@@ -5,6 +5,7 @@ from myresume.single_page.forms import ContactForm
 import smtplib
 from email.message import EmailMessage
 import os
+from os.path import join, dirname
 from dotenv import load_dotenv
 
 
@@ -12,9 +13,10 @@ from dotenv import load_dotenv
 single_page_blueprint = Blueprint('single-page', __name__, template_folder='templates/single_page')
 
 # ---------------------------Get user info to send email
-load_dotenv("C:/Users/Popuś/Desktop/Python/environment_variables/.env")
-my_email = os.getenv("MY_EMAIL")
-api_key_gmail = os.getenv("APP_PASSWORD_GMAIL")
+dotenv_path = join(dirname(__file__), '.env')
+load_dotenv(dotenv_path)
+MY_EMAIL = os.getenv("my_email")
+API_KEY_GMAIL = os.getenv("api_key_gmail")
 
 # ---------------------------Create views
 
@@ -63,13 +65,13 @@ def send_email():
     msg = EmailMessage()
     msg.set_content(user_info)
     msg["Subject"] = f"{subject}"
-    msg["From"] = my_email
-    msg["To"] = my_email
+    msg["From"] = MY_EMAIL
+    msg["To"] = MY_EMAIL
 
     #Send email
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(user=my_email, password=api_key_gmail)
+        connection.login(user=MY_EMAIL, password=API_KEY_GMAIL)
         connection.send_message(msg)
 
     #Return to home page

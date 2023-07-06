@@ -1,13 +1,25 @@
 from flask import Flask
-import secrets
+from config import config
+from flask_sqlalchemy import SQLAlchemy
 
 
+# ----------Create instances db and migrate
+db = SQLAlchemy()
+# migrate = Migrate()
+# ------------------------Create app
 
-#------------------------Create app
-application = Flask(__name__)
-application.config["SECRET_KEY"]= secrets.token_hex(32)
 
-#------------------------Register Blueprints
-from myresume.single_page.views import single_page_blueprint
+def create_app(config_name):
+    '''Create app with passed configuration'''
 
-application.register_blueprint(single_page_blueprint, url_prefix='/')
+    app = Flask(__name__)
+    app.config.from_object(config[config_name])
+
+    # db.init_app(app)
+    # migrate.init_app(app, db)
+
+    # ------------------------Register Blueprints
+    from myresume.single_page.views import single_page_blueprint
+    app.register_blueprint(single_page_blueprint, url_prefix='/')
+
+    return app

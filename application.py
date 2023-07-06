@@ -1,4 +1,7 @@
-from myresume import application
+from myresume import create_app
 
+
+
+application = create_app('production')
 if __name__ == "__main__":
-    application.run(debug=True, host="localhost", port="5000")
+    application.run(debug=False)
