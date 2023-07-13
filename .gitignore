@@ -13,6 +13,8 @@ static_resume.html
 myresume/
 config.py
 application.py
+templates/
+main.py/
 
 
 
