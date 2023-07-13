@@ -7,16 +7,20 @@ from email.message import EmailMessage
 import os
 from os.path import join, dirname
 from dotenv import load_dotenv
+from config import ProductionConfig
 
 
 # ---------------------------Create Blueprint
 single_page_blueprint = Blueprint('single-page', __name__, template_folder='templates/single_page')
 
 # ---------------------------Get user info to send email
-dotenv_path = join(dirname(__file__), '.env')
-load_dotenv(dotenv_path)
-MY_EMAIL = os.getenv("my_email")
-API_KEY_GMAIL = os.getenv("api_key_gmail")
+# dotenv_path = join(dirname(__file__), '.env')
+# load_dotenv(dotenv_path)
+# MY_EMAIL = os.getenv("my_email")
+# API_KEY_GMAIL = os.getenv("api_key_gmail")
+config_info = ProductionConfig()
+MY_EMAIL_AWS = config_info.MY_EMAIL
+API_KEY_GMAIL_AWS = config_info.API_KEY_GMAIL
 
 # ---------------------------Create views
 
@@ -65,13 +69,13 @@ def send_email():
     msg = EmailMessage()
     msg.set_content(user_info)
     msg["Subject"] = f"{subject}"
-    msg["From"] = MY_EMAIL
-    msg["To"] = MY_EMAIL
+    msg["From"] = MY_EMAIL_AWS
+    msg["To"] = MY_EMAIL_AWS
 
     #Send email
     with smtplib.SMTP("smtp.gmail.com") as connection:
         connection.starttls()
-        connection.login(user=MY_EMAIL, password=API_KEY_GMAIL)
+        connection.login(user=MY_EMAIL_AWS, password=API_KEY_GMAIL_AWS)
         connection.send_message(msg)
 
     #Return to home page

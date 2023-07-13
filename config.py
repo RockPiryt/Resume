@@ -40,6 +40,8 @@ class ProductionConfig(Config):
     DB_PASSWORD = os.environ.get('DB_PASSWORD')
     DB_NAME = os.environ.get('DB_NAME')
     # SQLALCHEMY_DATABASE_URI = F'mysql+pymysql://{DB_USERNAME}:{DB_PASSWORD}@{DB_HOST}/{DB_NAME}?charset=utf8mb4'
+    MY_EMAIL = os.getenv("my_email")
+    API_KEY_GMAIL = os.getenv("api_key_gmail")
 
 
 # ----------------------Config dict
