@@ -8,10 +8,11 @@ main.py
 .idea/
 .ebextensions/
 .env
-main.py
 Resume.zip
 
 static_resume.html
+myresume/
+config.py
 
 
 
