@@ -1,0 +1,111 @@
+<section id="portfolio" class="portfolio section-bg">
+    <div class="container" data-aos="fade-up">
+
+      <div class="section-title">
+        <h2>Portfolio</h2>
+        <p>I still develop my skills, when I create my project. On my Github there are 4 main projects with application. Moreover I show also my architecture design and visualization.</p>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-12 d-flex justify-content-center" data-aos="fade-up" data-aos-delay="100">
+          <ul id="portfolio-flters">
+            <li data-filter="*" class="filter-active">All</li>
+            <li data-filter=".filter-flask">FLask App</li>
+            <li data-filter=".filter-gui">GUI Tkinter App</li>
+            <li data-filter=".filter-cli">Other App</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="200">
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-flask">
+          <div class="portfolio-wrap">
+            <img src="{{ url_for('static', filename='assets/img/my_portfolio/Diesel_web_app/preview_diesel_dashboards.jpeg') }}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 1</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{{ url_for('static', filename='assets/img/my_portfolio/Diesel_web_app/preview_diesel_dashboards.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('info_project')}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-flask">
+          <div class="portfolio-wrap">
+            <img src="{{ url_for('static', filename='assets/img/my_portfolio/Pregnant_pills_web_app/preview_pregnant_pills.jpg') }}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 3</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{{ url_for('static', filename='assets/img/my_portfolio/Pregnant_pills_web_app/preview_pregnant_pills.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('info_project')}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-gui">
+          <div class="portfolio-wrap">
+            <img src="{{ url_for('static', filename='assets/img/my_portfolio/Baby_food_Tkinter_app/preview_baby_food_app.jpg') }}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 2</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{{ url_for('static', filename='assets/img/my_portfolio/Baby_food_Tkinter_app/preview_baby_food_app.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('info_project')}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-gui">
+          <div class="portfolio-wrap">
+            <img src="{{ url_for('static', filename='assets/img/my_portfolio/Exercise_tracker/exercises_tracker_pixela_preview.jpeg') }}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Card 2</h4>
+              <p>Card</p>
+              <div class="portfolio-links">
+                <a href="{{ url_for('static', filename='assets/img/my_portfolio/Exercise_tracker/exercises_tracker_pixela_preview.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('info_project')}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-gui">
+          <div class="portfolio-wrap">
+            <img src="{{ url_for('static', filename='assets/img/my_portfolio/Password_generator/password_gnerator_preview.jpg') }}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>Web 2</h4>
+              <p>Web</p>
+              <div class="portfolio-links">
+                <a href="{{ url_for('static', filename='assets/img/my_portfolio/Password_generator/password_gnerator_preview.jpg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('info_project')}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 portfolio-item filter-gui">
+          <div class="portfolio-wrap">
+            <img src="{{ url_for('static', filename='assets/img/my_portfolio/Bulding_plot_area/building_plot_area_preview.jpeg') }}" class="img-fluid" alt="">
+            <div class="portfolio-info">
+              <h4>App 3</h4>
+              <p>App</p>
+              <div class="portfolio-links">
+                <a href="{{ url_for('static', filename='assets/img/my_portfolio/Bulding_plot_area/building_plot_area_preview.jpeg') }}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>
+                <a href="{{ url_for('info_project')}}" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+
+      </div>
+
+    </div>
+  </section>
