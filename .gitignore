@@ -4,7 +4,6 @@ php-email-form/
 bg3.jpeg
 bg2.jpeg
 portoflio/
-main.py
 .idea/
 .ebextensions/
 .env
@@ -13,6 +12,7 @@ Resume.zip
 static_resume.html
 myresume/
 config.py
+application.py
 
 
 
