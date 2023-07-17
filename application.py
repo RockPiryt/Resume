@@ -2,6 +2,6 @@ from myresume import create_app
 
 
 
-application = create_app('production')
+application = create_app('testing')
 if __name__ == "__main__":
-    application.run(debug=False)
+    application.run(debug=True)

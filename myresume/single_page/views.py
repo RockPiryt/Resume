@@ -1,13 +1,12 @@
 # ------------------------------Imports
-from flask import Blueprint, render_template, redirect, url_for, request
-
+from flask import Blueprint, render_template, redirect, url_for, request, send_from_directory
 from myresume.single_page.forms import ContactForm
 import smtplib
 from email.message import EmailMessage
-import os
-from os.path import join, dirname
-from dotenv import load_dotenv
 from config import ProductionConfig
+# import os
+# from os.path import join, dirname
+# from dotenv import load_dotenv
 
 
 # ---------------------------Create Blueprint
@@ -85,3 +84,8 @@ def send_email():
 @single_page_blueprint.route('/info')
 def info_project():
     return render_template("info_project.html")
+
+
+@single_page_blueprint.route('/resume-download')
+def download_resume():
+    return send_from_directory(directory="static", path="assets/pdf/Paulina_Kimak_Resume.pdf", as_attachment=True)
